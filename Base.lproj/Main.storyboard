@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="sbX-od-EEm">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="BKK-wP-uzz">
+            <objects>
+                <navigationController id="sbX-od-EEm" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HvV-ko-hcj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="5R8-ZV-Jt7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="va5-7i-zCG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-794.375" y="322.38333333333333"/>
+        </scene>
+        <!--联动-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qHk-pv-NQ1"/>
+                        <viewControllerLayoutGuide type="bottom" id="k3n-8x-lWj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Yb8-wl-BIX">
+                                <rect key="frame" x="0.0" y="64" width="80" height="603"/>
+                                <color key="backgroundColor" red="0.49648710200000001" green="1" blue="0.46130147849999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="O1l-dX-5ML"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="UhR-em-U5z"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="egx-ZF-XNq"/>
+                                </connections>
+                            </tableView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="geO-yy-rtM">
+                                <rect key="frame" x="80" y="64" width="295" height="603"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Hpd-xD-54s">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="RXq-C8-Z2P">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="5ZW-h9-Rpu"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="eL4-J9-59K"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="geO-yy-rtM" firstAttribute="leading" secondItem="Yb8-wl-BIX" secondAttribute="trailing" id="1lr-wd-Raw"/>
+                            <constraint firstItem="k3n-8x-lWj" firstAttribute="top" secondItem="geO-yy-rtM" secondAttribute="bottom" id="3Vt-PM-P3W"/>
+                            <constraint firstAttribute="trailing" secondItem="geO-yy-rtM" secondAttribute="trailing" id="6f3-T7-yhF"/>
+                            <constraint firstItem="k3n-8x-lWj" firstAttribute="top" secondItem="Yb8-wl-BIX" secondAttribute="bottom" id="CkG-xu-aDJ"/>
+                            <constraint firstItem="geO-yy-rtM" firstAttribute="top" secondItem="qHk-pv-NQ1" secondAttribute="bottom" id="DoZ-qn-3Gp"/>
+                            <constraint firstItem="Yb8-wl-BIX" firstAttribute="top" secondItem="qHk-pv-NQ1" secondAttribute="bottom" id="GLc-sJ-aKB"/>
+                            <constraint firstItem="Yb8-wl-BIX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="MWA-y4-tWr"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="联动" id="7P6-1x-Vip"/>
+                    <connections>
+                        <outlet property="leftTableView" destination="Yb8-wl-BIX" id="GEr-Rd-Nu4"/>
+                        <outlet property="rightCollectionView" destination="geO-yy-rtM" id="7NH-07-sKS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-239.5" y="320.5"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
+</document>
